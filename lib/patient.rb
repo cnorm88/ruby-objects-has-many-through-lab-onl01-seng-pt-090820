@@ -22,15 +22,21 @@ class Patient
     end
   end
 
-  # def doctors
-  #   appointments.map {|appointment| appointment.doctor}
-  # end
-  
-    def doctors
+  def doctors
     appointments.map do |appointment|
-      appointment.doctor
+    appointment.doctor
     end
   end
 
+def songs
+    Song.all.select {|song| song.artist == self}
+  end
+  
+
+  def genres
+    songs.collect do |song|
+    song.genre
+    end
+  end
 
 end
